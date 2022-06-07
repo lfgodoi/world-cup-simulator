@@ -1,0 +1,58 @@
+{
+    "Group A":
+    {
+        "Qatar": [3, 4],
+        "Equator": [5, 5],
+        "Senegal": [5, 7],
+        "Netherlands": [8, 8]
+    },
+    "Group B":
+    {
+        "England": [7, 9],
+        "Iran": [4, 4],
+        "United States": [5, 7],
+        "Wales": [5, 7]
+    },
+    "Group C":
+    {
+        "Argentina": [7, 9],
+        "Saudi Arabia": [3, 4],
+        "Mexico": [6, 7],
+        "Poland": [6, 8]
+    },
+    "Group D":
+    {
+        "France": [8, 10],
+        "Australia": [4, 6],
+        "Denmark": [6, 8],
+        "Tunisia": [4, 5]
+    },
+    "Group E":
+    {
+        "Spain": [7, 8],
+        "Costa Rica": [5, 5],
+        "Germany": [7, 8],
+        "Japan": [5, 6]
+    },
+    "Group F":
+    {
+        "Belgium": [7, 9],
+        "Canada": [6, 6],
+        "Morocco": [5, 5],
+        "Croatia": [6, 7]
+    },
+    "Group G":
+    {
+        "Brazil": [9, 9],
+        "Serbia": [6, 7],
+        "Switzerland": [6, 7],
+        "Cameroon": [5, 6]
+    },
+    "Group H":
+    {
+        "Portugal": [6, 8],
+        "Gana": [4, 6],
+        "Uruguay": [6, 8],
+        "South Korea": [5, 5]
+    }
+}
