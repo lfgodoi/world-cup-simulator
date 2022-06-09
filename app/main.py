@@ -19,7 +19,11 @@ def run():
     simulator.run_quarter_finals()
     simulator.run_semifinals()
     simulator.run_final()
-    return render_template("index.html")
+    print(simulator.content_group_stage)
+    print(simulator.content_knockout)
+    return render_template("index.html", 
+                           content_group_stage=simulator.content_group_stage,
+                           content_knockout=simulator.content_knockout)
 
 if __name__ == "__main__":
     app.run(debug=True)
