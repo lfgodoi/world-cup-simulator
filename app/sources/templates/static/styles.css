@@ -1,0 +1,32 @@
+:root {
+    --inner: #b3ffb3;
+    --outer: #e6ffe6;
+    --back: #80ff80;
+}
+
+html * {
+    font-family: Courier !important;
+    margin: 10px;
+    padding: 0;
+    background-color: var(--back);
+}
+
+.div-results {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background-color: var(--outer);
+    border-radius: 6px;
+    overflow-y: auto;
+}
+
+.div-header {
+    text-align: center;
+}
+
+.button-run {
+    background-color: var(--inner);
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+}

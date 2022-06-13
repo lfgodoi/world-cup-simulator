@@ -1,6 +1,11 @@
 {% extends "template.html" %}
 {% block content %}
-    World Cup Simulator
-    {{ content_group_stage }}
-    {{ content_knockout }}
+    <div class="div-header">
+        <h2 class="h2-title">World Cup Simulator</h2>
+        <input class="button-run" type="button" onclick="runSimulation();" value="Run a new simulation">
+    </div>
+    <div class="div-results">
+        <div id="div-group-stage" class="div-stage"></div>
+        <div id="div-knockout"  class="div-stage"></div>
+    </div>
 {% endblock %}

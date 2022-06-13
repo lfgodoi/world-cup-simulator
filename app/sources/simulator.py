@@ -43,7 +43,6 @@ class Simulator:
         matches = generate_matches()
         for group_name in self.groups:
             self.content_group_stage += f"<h4>{group_name}</h4>"
-            # print(f"\n**** {group_name} ****")
             group = self.groups[group_name]
             team_names = list(group)
             for match in matches:
@@ -51,7 +50,6 @@ class Simulator:
                 team_b = team_names[match[1]]
                 a, b = estimate_results(group[team_a], group[team_b])
                 self.content_group_stage += f"<p>{team_a} {a} x {b} {team_b}</p>"
-                # print(f"{team_a} {a} x {b} {team_b}")
                 if a > b:
                     self.group_results[group_name][team_names[match[0]]]["W"] += 1 
                     self.group_results[group_name][team_names[match[1]]]["L"] += 1       
@@ -69,13 +67,14 @@ class Simulator:
                     self.group_results[group_name][team_names[match[1]]]["D"] += 1
                     self.group_results[group_name][team_names[match[0]]]["P"] += 1
                     self.group_results[group_name][team_names[match[1]]]["P"] += 1
+            self.content_group_stage += "<br>"
         self.select_qualified()
 
     # Algorithm for processing knockout stages
     def run_knockout(self, current_stage, matches, stage_name):
+        self.content_knockout += "<br>"
         next_stage = current_stage.copy()
         self.content_knockout += f"<h4>{stage_name}</h4>"
-        # print(f"\n**** {stage_name} ****")
         for match in matches:
             team_a = current_stage[match[0]]["team"]
             team_b = current_stage[match[1]]["team"]
@@ -83,12 +82,10 @@ class Simulator:
             power_b = current_stage[match[1]]["power"]
             a, b = estimate_results(power_a, power_b)
             if a < b:
-                self.content_knockout += f"<p>{team_a} {a} x {b} {team_b}<\p>"
-                # print(f"{team_a} {a} x {b} {team_b}")
+                self.content_knockout += f"<p>{team_a} {a} x {b} {team_b}</p>"
                 next_stage.pop(match[0])
             elif b < a:
-                self.content_knockout += f"<p>{team_a} {a} x {b} {team_b}<\p>"
-                # print(f"{team_a} {a} x {b} {team_b}")
+                self.content_knockout += f"<p>{team_a} {a} x {b} {team_b}</p>"
                 next_stage.pop(match[1])    
             else:
                 A = a
@@ -96,12 +93,10 @@ class Simulator:
                 while a == b:
                     a, b = estimate_results(power_a, power_b, True)
                 if a < b:
-                    self.content_knockout += f"<p>{team_a} {a} x {b} {team_b}<\p>"
-                    # print(f"{team_a} {a} x {b} {team_b}")
+                    self.content_knockout += f"<p>{team_a} {a} x {b} {team_b}</p>"
                     next_stage.pop(match[0])
                 elif b < a:
-                    self.content_knockout += f"<p>{team_a} {A} ({a}) x {B} ({b}) {team_b}<\p>"
-                    # print(f"{team_a} {A} ({a}) x {B} ({b}) {team_b}")
+                    self.content_knockout += f"<p>{team_a} {A} ({a}) x {B} ({b}) {team_b}</p>"
                     next_stage.pop(match[1])
         return next_stage
 
@@ -127,6 +122,6 @@ class Simulator:
         f = list(self.final_results)
         final_match = [[f[0], f[1]]]  
         self.champion = self.run_knockout(self.final_results, final_match, "Final")
-        self.content_knockout += f"<h4>**** Champion ****</h4>"
-        self.content_knockout += f"<p>{self.champion[list(self.champion)[0]]['team']}</p>"
-        # print(f"\n**** Champion ****\n{self.champion[list(self.champion)[0]]['team']}")        
+        self.content_knockout += "<br>"
+        self.content_knockout += f"<h4>Champion</h4>"
+        self.content_knockout += f"<p>{self.champion[list(self.champion)[0]]['team']}</p>"    
