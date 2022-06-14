@@ -1,32 +1,58 @@
+/* General setup */
+
 :root {
-    --inner: #b3ffb3;
+    --inner: #006600;
     --outer: #e6ffe6;
     --back: #80ff80;
+    --textwhite: #ffffff;
+    --textblack: #000000;
 }
 
-html * {
-    font-family: Courier !important;
-    margin: 10px;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
     padding: 0;
     background-color: var(--back);
+    text-align: center;
 }
 
+/* Match result area */
+
 .div-results {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
+    margin: 30px 20px 30px 20px;
     background-color: var(--outer);
-    border-radius: 6px;
-    overflow-y: auto;
+    padding: 20px;
+    border-radius: 10px;
 }
+
+/* Page header */
 
 .div-header {
     text-align: center;
 }
 
+/* Simulation button */
+
 .button-run {
     background-color: var(--inner);
+    color: var(--textwhite);
+    font-size: 15px;
     border: none;
     padding: 10px;
     border-radius: 6px;
+    cursor: pointer;
+}
+
+.button-run:hover {
+    background-color: var(--outer);
+    color: var(--textblack);
+}
+
+.button-run:active {
+    background-color: var(--inner);
+    color: var(--textwhite);
 }

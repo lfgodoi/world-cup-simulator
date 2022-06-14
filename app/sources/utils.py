@@ -12,8 +12,8 @@ def generate_matches():
 # Algorithm for estimating match results
 def estimate_results(team_a, team_b, penalties=False):
     std = 1.0
-    prop_a = 1.25 + 0.15*(team_a[1] - team_b[0])
-    prop_b = 1.25 + 0.15*(team_b[1] - team_a[0])
+    prop_a = 1.2 + 0.2*(team_a[1] - team_b[0])
+    prop_b = 1.2 + 0.2*(team_b[1] - team_a[0])
     if penalties:
         prop = 4
         a = int(np.random.normal(prop, std))

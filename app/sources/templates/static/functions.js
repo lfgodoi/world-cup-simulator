@@ -1,12 +1,12 @@
-// Atualização das figuras de um lado
+// Updating the simulated results
 function runSimulation() {
-    req = $.ajax({
-        url : '/run',
-        type : 'POST',
+    request = $.ajax({
+        url : "/run",
+        type : "POST",
         data : {}
     });
-    req.done(function(data) {
-        document.getElementById("div-group-stage").innerHTML = data.content_group_stage;
-        document.getElementById("div-knockout").innerHTML = data.content_knockout;
+    request.done(function(data) {
+        $("#div-group-stage").html(data.content_group_stage);
+        $("#div-knockout").html(data.content_knockout);
     });
 }
